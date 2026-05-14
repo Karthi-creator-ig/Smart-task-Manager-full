@@ -1,0 +1,216 @@
+<!-- dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>SmartFlow Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+  <!-- SIDEBAR -->
+
+  <div class="sidebar">
+
+    <div>
+
+      <h2 class="logo">
+        SmartFlow
+      </h2>
+
+      <ul class="menu">
+
+        <li onclick="showSection('dashboardSection')">
+          🏠 Dashboard
+        </li>
+
+        <li onclick="showSection('taskSection')">
+          📋 Tasks
+        </li>
+
+        <li onclick="showSection('analyticsSection')">
+          📊 Analytics
+        </li>
+
+        <li onclick="showSection('calendarSection')">
+          📅 Calendar
+        </li>
+
+      </ul>
+
+    </div>
+
+    <button id="logoutBtn"
+    class="btn logout-btn">
+      Logout
+    </button>
+
+  </div>
+
+  <!-- MAIN -->
+
+  <div class="main-content">
+
+    <!-- DASHBOARD SECTION -->
+
+    <div id="dashboardSection">
+
+      <div class="topbar">
+
+        <div>
+
+          <h1>
+            Welcome Back 👋
+          </h1>
+
+          <p class="subtitle">
+            Manage your productivity efficiently
+          </p>
+
+        </div>
+
+        <button id="openModal"
+        class="btn">
+          + Add Task
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- ANALYTICS -->
+
+    <div id="analyticsSection">
+
+      <div class="stats-container">
+
+        <div class="stat-card">
+
+          <h3>Total Tasks</h3>
+
+          <p id="totalTasks">0</p>
+
+        </div>
+
+        <div class="stat-card">
+
+          <h3>Completed</h3>
+
+          <p id="completedTasks">0</p>
+
+        </div>
+
+        <div class="stat-card">
+
+          <h3>Pending</h3>
+
+          <p id="pendingTasks">0</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TASKS -->
+
+    <div id="taskSection">
+
+      <h2 class="section-title">
+        Your Tasks
+      </h2>
+
+      <div class="task-container"
+      id="taskContainer">
+
+      </div>
+
+    </div>
+
+    <!-- CALENDAR -->
+
+    <div id="calendarSection">
+
+      <div class="calendar-card">
+
+        <h2>
+          📅 Today's Date
+        </h2>
+
+        <p id="todayDate"></p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- MODAL -->
+
+<div class="modal"
+id="taskModal">
+
+  <div class="modal-content">
+
+    <h2>Create Task</h2>
+
+    <input type="text"
+    id="taskTitle"
+    placeholder="Task Title">
+
+    <textarea
+    id="taskDescription"
+    placeholder="Task Description"></textarea>
+
+    <select id="taskPriority">
+
+      <option value="Low">
+        Low Priority
+      </option>
+
+      <option value="Medium">
+        Medium Priority
+      </option>
+
+      <option value="High">
+        High Priority
+      </option>
+
+    </select>
+
+    <input type="date"
+    id="taskDate">
+
+    <button id="saveTask"
+    class="btn">
+      Save Task
+    </button>
+
+    <button id="closeModal"
+    class="btn danger">
+      Close
+    </button>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
